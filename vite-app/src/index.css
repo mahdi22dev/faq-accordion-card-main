@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --font-family-main: "Kumbh Sans", sans-serif;
+  --font-size-main: clamp(8px, 1.3vw, 11px);
+  --font-size-2: clamp(20px, 3vw, 35px);
+  --font-size-h2: clamp(10.4px, 1.3vw, 14px);
+  --color-1: hsl(237, 12%, 33%);
+  --color-2: hsl(240, 6%, 50%);
+  --color-3-dividers: hsl(240, 5%, 91%);
+  --clr-primary-red: hsl(14, 88%, 65%);
+  --faq-width: 900px;
+  --faq-child-width: 50%;
+}
+.container {
+  background: rgb(101, 101, 231);
+  background: linear-gradient(
+    0deg,
+    rgba(101, 101, 231, 1) 24%,
+    rgba(175, 103, 233, 1) 65%
+  );
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-family-main);
+  letter-spacing: 1px;
+  font-size: var(--font-size-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+ul {
+  list-style: none;
+}
+h2 {
+  cursor: pointer;
+}
+
+.faq {
+  width: var(--faq-width);
+  /* width: 900px; */
+  height: 500px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  position: relative;
+}
+.faq::before {
+  content: "";
+  background: url(.//images/illustration-box-desktop.svg) no-repeat;
+  width: 140px;
+  height: 190px;
+  position: absolute;
+  top: 60%;
+  left: -1.6%;
+  transform: translate(-50%, -50%);
+  z-index: 1111;
+  /* animation: box 10s infinite;
+  animation-direction: alternate; */
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+.image {
+  width: var(--faq-child-width);
+  height: 100%;
+  background: url(images/illustration-woman-online-desktop.svg) bottom 3.1rem
+      left -5.1rem no-repeat,
+    url(images/bg-pattern-desktop.svg) bottom -10rem left -36rem no-repeat;
+}
+.faq-toggle {
+  width: var(--faq-child-width);
+  height: 100%;
+  padding: 20px;
+}
+.faq-toggle h1 {
+  font-size: var(--font-size-2);
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  padding: 10%;
+  padding-left: 0%;
+  color: var(--color-1);
+}
+.faq-toggle h2 {
+  font-size: var(--font-size-h2);
+  font-family: var(--font-family-main);
+  font-weight: 400;
+  color: var(--color-2);
+  transition: color 0.3s;
+}
+.faq-toggle h2:hover {
+  color: var(--clr-primary-red);
+}
+.divider {
+  width: 100%;
+  height: 0.031rem;
+  opacity: 1;
+  background-color: var(--color-3-dividers);
+  margin: 14px 0;
+}
+.faq-quations {
+  padding: 0 50px 50px 0;
+}
+.h2fucker {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-quations p {
+  padding-top: 10px;
+  font-size: var(--font-size-main);
+  color: var(--color-1);
+  max-width: 80%;
+}
+#changeColor {
+  color: #1d1e35;
+  font-weight: 700;
+}
+.icon {
+  width: 11px;
+  height: 9px;
+}
+.icon {
+  width: 11px;
+  height: 9px;
+  transform: rotate(0deg);
+}
+.rotate {
+  width: 11px;
+  height: 9px;
+  transform: rotate(180deg);
+}
+
+@keyframes box {
+  25% {
+    transform: translate(-50%, -30%);
+  }
+  50% {
+    transform: translate(-50%, -60%);
+  }
+  75% {
+    transform: translate(-50%, -30%);
+  }
+  100% {
+    transform: translate(-50%, -60%);
+  }
+}
+
+/* Responsive Css */
+@media (max-width: 904px) {
+  :root {
+    --faq-width: 90%;
+    --faq-child-width: 50%;
+  }
+}
+@media (max-width: 876px) {
+  :root {
+    --faq-width: 60%;
+    --faq-child-width: 100%;
+  }
+  .faq {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .faq::after {
+    content: "";
+    background: url(images/bg-pattern-mobile.svg) no-repeat;
+    width: 268px;
+    height: 180px;
+    position: absolute;
+    top: 6.5rem;
+    left: 50%;
+    transform: translate(-45%, -53%);
+  }
+
+  .faq-toggle {
+    height: 80%;
+  }
+
+  .faq-quations {
+    padding: 10px;
+  }
+}
